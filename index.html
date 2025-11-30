@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="kz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarlenEDU - Білім платформасы</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#home">
+                <i class="bi bi-mortarboard-fill me-2"></i>MarlenEDU
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Басты бет</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Курстар</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Байланыс</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="carousel-caption text-center">
+                            <h1 class="display-2 fw-bold mb-4">IT саласындағы мансапқа апарар жол</h1>
+                            <p class="lead mb-4">Қазіргі заманғы технологияларды оқып, болашаққа дайын болыңыз</p>
+                            <button class="btn btn-primary btn-lg me-3" onclick="showEnrollModal()">Курсқа жазылу</button>
+                            <button class="btn btn-outline-light btn-lg" onclick="showToast('Көбірек білу үшін бізбен хабарласыңыз')">Көбірек білу</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="carousel-caption text-center">
+                            <h1 class="display-2 fw-bold mb-4">Практикалық білім беру</h1>
+                            <p class="lead mb-4">Нақты жобалар арқылы тәжірибе жинақтаңыз</p>
+                            <button class="btn btn-success btn-lg me-3" onclick="showToast('Сіз курстар тізіміне қосылдыңыз!')">Бастау</button>
+                            <button class="btn btn-outline-light btn-lg">Бағдарламалар</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="carousel-caption text-center">
+                            <h1 class="display-2 fw-bold mb-4">Халықаралық сертификаттар</h1>
+                            <p class="lead mb-4">Әлемдік деңгейдегі сертификаттар алыңыз</p>
+                            <button class="btn btn-warning btn-lg me-3" onclick="showToast('Сертификаттар туралы ақпарат жіберілді')">Сертификаттар</button>
+                            <button class="btn btn-outline-light btn-lg">Тіркелу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <section id="courses" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Біздің курстар</h2>
+                <p class="lead text-muted">IT саласындағы ең сұранысты бағдарламалар</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-code-slash display-1 text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Frontend әзірлеу</h5>
+                            <p class="card-text text-muted">HTML, CSS, JavaScript, React</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">HTML</span>
+                                <span class="badge bg-success me-1">CSS</span>
+                                <span class="badge bg-warning text-dark">JS</span>
+                                <span class="badge bg-info">React</span>
+                            </div>
+                            <button class="btn btn-outline-primary" onclick="showCourseDetails('frontend')">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-server display-1 text-success"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Backend әзірлеу</h5>
+                            <p class="card-text text-muted">Node.js, Python, Database</p>
+                            <div class="mb-3">
+                                <span class="badge bg-success me-1">Node.js</span>
+                                <span class="badge bg-primary me-1">Python</span>
+                                <span class="badge bg-danger">SQL</span>
+                                <span class="badge bg-warning text-dark">MongoDB</span>
+                            </div>
+                            <button class="btn btn-outline-success" onclick="showCourseDetails('backend')">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-phone display-1 text-warning"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Мобильді әзірлеу</h5>
+                            <p class="card-text text-muted">iOS, Android, React Native</p>
+                            <div class="mb-3">
+                                <span class="badge bg-info me-1">iOS</span>
+                                <span class="badge bg-success me-1">Android</span>
+                                <span class="badge bg-primary">React Native</span>
+                                <span class="badge bg-danger">Flutter</span>
+                            </div>
+                            <button class="btn btn-outline-warning" onclick="showCourseDetails('mobile')">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-palette display-1 text-danger"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">UI/UX Дизайн</h5>
+                            <p class="card-text text-muted">Figma, Adobe XD, Prototyping</p>
+                            <div class="mb-3">
+                                <span class="badge bg-danger me-1">Figma</span>
+                                <span class="badge bg-primary me-1">Adobe XD</span>
+                                <span class="badge bg-success">Sketch</span>
+                                <span class="badge bg-warning text-dark">UI</span>
+                            </div>
+                            <button class="btn btn-outline-danger" onclick="showCourseDetails('design')">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-shield-check display-1 text-info"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Киберқауіпсіздік</h5>
+                            <p class="card-text text-muted">Ethical Hacking, Security</p>
+                            <div class="mb-3">
+                                <span class="badge bg-dark me-1">Security</span>
+                                <span class="badge bg-danger">Hacking</span>
+                                <span class="badge bg-warning text-dark">Network</span>
+                                <span class="badge bg-info">Crypto</span>
+                            </div>
+                            <button class="btn btn-outline-info" onclick="showCourseDetails('security')">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-robot display-1 text-secondary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Жасанды интеллект</h5>
+                            <p class="card-text text-muted">Machine Learning, AI, Deep Learning</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Python</span>
+                                <span class="badge bg-success">TensorFlow</span>
+                                <span class="badge bg-warning text-dark">ML</span>
+                                <span class="badge bg-info">AI</span>
+                            </div>
+                            <button class="btn btn-outline-secondary" onclick="showCourseDetails('ai')">Толығырақ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Жиі қойылатын сұрақтар</h2>
+                <p class="lead text-muted">Сіздің ойыңыздағы сұрақтарыңызға жауаптар</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Курстарға қалай жазылуға болады?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Курстарға жазылу үшін веб-сайтта тіркелу керек. Тіркеуден кейін қалаған курсыңызды таңдап, төлем жасау арқылы жазыла аласыз. Төлем онлайн карталар арқылы жүзеге асады.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Курстардың ұзақтығы қанша?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Әр курс әртүрлі ұзақтыққа ие. Көбінесе курстар 3-6 ай аралығында жалғасады. Толық ақпаратты курс сипаттамасынан көре аласыз.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Сертификат беріле ме?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Иә, курсты сәтті аяқтағаннан кейін халықаралық стандартқа сәйкес сертификат беріледі. Бұл сертификат LinkedIn профиліңізде қолдануға болады.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Оқу форматы қандай?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Біз онлайн форматта оқытамыз. Сабақтар жазба түрінде жүргізіледі, практикалық жұмыстар үшін 24/7 қолдау бар. Тікелей эфирлер де ұйымдастырылады.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Қайтару мүмкіндігі бар ма?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Иә, курс басталғаннан кейін 7 күн ішінде қайтаруға болады. 7 күн өткен соң қайтару жүргізілмейді.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Бағдарламалар</h2>
+                <p class="lead text-muted">Әртүрлі бағдарламалар мен бағыттар</p>
+            </div>
+            <ul class="nav nav-pills justify-content-center mb-4" id="programTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="beginner-tab" data-bs-toggle="tab" data-bs-target="#beginner" type="button">Бастаушыларға</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="intermediate-tab" data-bs-toggle="tab" data-bs-target="#intermediate" type="button">Орта деңгей</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="advanced-tab" data-bs-toggle="tab" data-bs-target="#advanced" type="button">Кәсіби</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="programTabContent">
+                <div class="tab-pane fade show active" id="beginner" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Web әзірлеуге кіріспе</h5>
+                                    <p class="card-text">HTML, CSS, JavaScript негіздері</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>8 апта</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>48 сабақ</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>Сертификат</li>
+                                    </ul>
+                                    <button class="btn btn-primary" onclick="showToast('Бастаушылар курсына қосылдыңыз!')">Курсқа жазылу</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Python бағдарламалау</h5>
+                                    <p class="card-text">Python тіліне кіріспе</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>6 апта</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>36 сабақ</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>Проект</li>
+                                    </ul>
+                                    <button class="btn btn-primary" onclick="showToast('Python курсына қосылдыңыз!')">Курсқа жазылу</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="intermediate" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">React әзірлеу</h5>
+                                    <p class="card-text">Modern React және Redux</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>10 апта</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>60 сабақ</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>3 проект</li>
+                                    </ul>
+                                    <button class="btn btn-success" onclick="showToast('React курсына қосылдыңыз!')">Курсқа жазылу</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Node.js Backend</h5>
+                                    <p class="card-text">Server-side JavaScript</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>8 апта</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>48 сабақ</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>API</li>
+                                    </ul>
+                                    <button class="btn btn-success" onclick="showToast('Node.js курсына қосылдыңыз!')">Курсқа жазылу</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="advanced" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">DevOps инженерия</h5>
+                                    <p class="card-text">Docker, Kubernetes, CI/CD</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>12 апта</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>72 сабақ</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>Сертификат</li>
+                                    </ul>
+                                    <button class="btn btn-warning" onclick="showToast('DevOps курсына қосылдыңыз!')">Курсқа жазылу</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Machine Learning</h5>
+                                    <p class="card-text">AI және Deep Learning</p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>16 апта</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>96 сабақ</li>
+                                        <li><i class="bi bi-check-circle text-success me-2"></i>Зерттеу</li>
+                                    </ul>
+                                    <button class="btn btn-warning" onclick="showToast('ML курсына қосылдыңыз!')">Курсқа жазылу</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-mortarboard-fill me-2"></i>MarlenEDU
+                    </h5>
+                    <p>IT білімінің жаңа стандарты. Қазіргі заманғы технологияларды оқыту арқылы сіздің мансабыңызды құраймыз.</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Бағдарламалар</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Frontend</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Backend</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Mobile</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Design</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Security</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Компания</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Біз туралы</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Мұғалімдер</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Блог</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Карьера</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Партнерлер</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Қолдау</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Көмек</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Шарттар</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Құпиялық</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Байланыс</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Сертификаттар</h6>
+                    <div class="mb-3">
+                        <span class="badge bg-primary me-1 mb-1">HTML5</span>
+                        <span class="badge bg-success me-1 mb-1">CSS3</span>
+                        <span class="badge bg-warning text-dark me-1 mb-1">JS</span>
+                        <span class="badge bg-danger me-1 mb-1">React</span>
+                        <span class="badge bg-info me-1 mb-1">Node.js</span>
+                        <span class="badge bg-secondary me-1 mb-1">Python</span>
+                        <span class="badge bg-dark me-1 mb-1">AWS</span>
+                        <span class="badge bg-light text-dark me-1 mb-1">Docker</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-white">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 MarlenEDU. Барлық құқықтар қорғалған.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        <span class="badge bg-success me-2">ISO 9001</span>
+                        <span class="badge bg-primary me-2">Google Partner</span>
+                        <span class="badge bg-warning text-dark">Microsoft Certified</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container">
+        <div class="toast align-items-center text-white bg-success border-0" id="successToast" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="bi bi-check-circle me-2"></i>
+                    <span id="toastMessage">Әрекет сәтті орындалды!</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="enrollModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Курсқа жазылу</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="enrollForm">
+                        <div class="mb-3">
+                            <label class="form-label">Атыңыз</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Телефон</label>
+                            <input type="tel" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Курс таңдау</label>
+                            <select class="form-select" required>
+                                <option value="">Курсты таңдаңыз</option>
+                                <option>Frontend әзірлеу</option>
+                                <option>Backend әзірлеу</option>
+                                <option>Мобильді әзірлеу</option>
+                                <option>UI/UX Дизайн</option>
+                                <option>Киберқауіпсіздік</option>
+                                <option>Жасанды интеллект</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Бас тарту</button>
+                    <button type="button" class="btn btn-primary" onclick="submitEnroll()">Жазылу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="courseModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="courseModalTitle">Курс туралы</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="courseModalBody">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Жабу</button>
+                    <button type="button" class="btn btn-primary" onclick="showEnrollModal()">Курсқа жазылу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
